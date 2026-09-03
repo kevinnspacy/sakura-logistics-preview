@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta name="robots" content="noindex, nofollow"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Частые вопросы — SAKURA LOGISTICS</title>
+<meta name="description" content="Честные ответы на частые вопросы о покупке автомобиля из Японии: сроки доставки, санкционные автомобили, цена, проверка, документы и оплата.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* ---------- page hero (subpage) ---------- */
+  .page-hero{padding:clamp(4rem,10vh,7rem) 0 2.5rem}
+  .page-hero h1{font-size:clamp(2.2rem,5vw,3.8rem);max-width:46rem}
+  .page-hero .hero-sub{max-width:40rem}
+  .page-hero .hero-meta{margin-bottom:2rem}
+
+  /* ---------- faq layout (asymmetric) ---------- */
+  .faq-wrap{display:grid;grid-template-columns:320px 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+  .faq-nav{position:sticky;top:120px;display:flex;flex-direction:column;gap:0.35rem}
+  .faq-nav .nav-cap{
+    font-family:var(--mono);font-size:0.78rem;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--slate);margin-bottom:0.9rem;
+    display:flex;align-items:center;gap:0.5rem;
+  }
+  .faq-nav .nav-cap::before{content:"";width:22px;height:1px;background:var(--accent);opacity:.5}
+  .faq-nav a{
+    text-decoration:none;color:var(--steel);font-size:0.95rem;font-weight:500;
+    padding:0.6rem 0.9rem;border-radius:0.9rem;display:flex;gap:0.7rem;align-items:baseline;
+    transition:background .25s,color .25s;
+  }
+  .faq-nav a:hover{color:var(--ink);background:var(--surface)}
+  .faq-nav a .n{
+    font-family:var(--mono);font-size:0.72rem;color:var(--slate);letter-spacing:0.06em;
+    flex:none;transition:color .25s;
+  }
+  .faq-nav a:hover .n{color:var(--accent)}
+
+  /* ---------- accordion ---------- */
+  .faq-list{display:flex;flex-direction:column;gap:1rem}
+  details.faq-item{
+    background:var(--surface);border:1px solid var(--border);border-radius:1.75rem;
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  details.faq-item summary{
+    list-style:none;cursor:pointer;user-select:none;
+    display:flex;align-items:center;justify-content:space-between;gap:1.2rem;
+    padding:1.6rem 1.8rem;font-weight:600;font-size:1.12rem;letter-spacing:-0.01em;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none}
+  details.faq-item summary:hover{color:var(--accent);transition:color .2s}
+  details.faq-item .q-ic{
+    width:38px;height:38px;border-radius:12px;flex:none;
+    background:rgba(225,29,72,0.08);color:var(--accent);
+    display:grid;place-items:center;
+    transition:transform .35s cubic-bezier(0.34,1.56,0.64,1),background .25s,color .25s;
+  }
+  details.faq-item .q-ic svg{width:18px;height:18px}
+  details[open].faq-item .q-ic{background:var(--accent);color:#fff;transform:rotate(45deg)}
+  details.faq-item .ans{padding:0 1.8rem 1.7rem;color:var(--steel);font-size:1rem;max-width:52rem}
+  details.faq-item .ans p{margin-bottom:0.8rem}
+  details.faq-item .ans p:last-child{margin-bottom:0}
+  details.faq-item .ans .list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:0.9rem}
+  details.faq-item .ans .list li{display:flex;gap:0.7rem;align-items:flex-start}
+  details.faq-item .ans .list li::before{
+    content:"";flex:none;width:5px;height:5px;border-radius:50%;
+    background:var(--accent);margin-top:0.62em;
+  }
+  details.faq-item .ans .mono{
+    font-family:var(--mono);font-size:0.85rem;color:var(--slate);
+    background:rgba(241,245,249,0.6);border:1px solid var(--border);
+    border-radius:0.7rem;padding:0.55rem 0.85rem;display:inline-block;
+  }
+
+  @media (max-width:900px){
+    .faq-wrap{grid-template-columns:1fr}
+    .faq-nav{position:static;flex-direction:row;flex-wrap:wrap;gap:0.4rem}
+    .faq-nav .nav-cap{width:100%}
+    .faq-nav a{padding:0.45rem 0.75rem;border:1px solid var(--border);background:var(--surface);border-radius:999px;font-size:0.85rem}
+    .faq-nav a .n{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V3M12 21v-6M9 12H3M21 12h-6"/></svg>
+      </span>
+      <span>SAKURA&nbsp;LOGISTICS</span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="index.html#services">Услуги</a>
+      <a href="index.html#why">Почему мы</a>
+      <a href="index.html#contact">Контакты</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="tel:+79645410111">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="phone-label">8 964 541-01-11</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow reveal"><span class="dot"></span> Частые вопросы · честные ответы</span>
+    <h1 class="reveal d1">Ответы на частые вопросы</h1>
+    <p class="hero-sub reveal d2">Прозрачная логистика начинается с честных ответов. Мы собрали ключевую информацию, чтобы вы могли принять решение без давления.</p>
+    <div class="hero-ctas reveal d3">
+      <a class="btn btn-primary" href="tel:+79645410111">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Позвонить
+      </a>
+      <a class="btn btn-ghost" href="https://t.me/SakuraLogist" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        Telegram
+      </a>
+    </div>
+    <div class="hero-meta reveal d4">
+      <div><b>8 964 541-01-11</b>Звонок или WhatsApp</div>
+      <div><b>@SakuraLogist</b>Telegram</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag">Частые вопросы</div>
+      <h2>Что важно знать до покупки</h2>
+      <p>Короткие и честные ответы. Там, где сроки или цены зависят от конкретного лота, — уточняем по ситуации.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <aside class="faq-nav reveal d1" aria-label="Навигация по вопросам">
+        <div class="nav-cap">Навигация по процессам</div>
+        <a href="#faq-delivery"><span class="n">01</span>Доставка</a>
+        <a href="#faq-cars"><span class="n">02</span>Какие авто</a>
+        <a href="#faq-price"><span class="n">03</span>Цена</a>
+        <a href="#faq-check"><span class="n">04</span>Проверка</a>
+        <a href="#faq-docs"><span class="n">05</span>Ключи и документы</a>
+        <a href="#faq-travel"><span class="n">06</span>Поездка в Японию</a>
+        <a href="#faq-payment"><span class="n">07</span>Оплата</a>
+      </aside>
+
+      <div class="faq-list">
+        <details class="faq-item reveal d1" id="faq-delivery" open>
+          <summary>
+            Сколько времени занимает доставка?
+            <span class="q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="ans">
+            <p>Сроки зависят от аукциона и порта отправки. В среднем логистика до Владивостока занимает 3–5 недель. Точный график уточним по ситуации для конкретного лота.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d1" id="faq-cars">
+          <summary>
+            Какие автомобили можно привезти?
+            <span class="q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="ans">
+            <p>Мы работаем со всеми доступными аукционами Японии, включая санкционные модели, используя проверенные логистические цепочки. Доступность конкретных марок уточним по ситуации на момент запроса.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d1" id="faq-price">
+          <summary>
+            Из чего складывается итоговая цена?
+            <span class="q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="ans">
+            <p>Цена абсолютно прозрачна и состоит из:</p>
+            <ul class="list">
+              <li>Стоимости авто на аукционе</li>
+              <li>Расходов по Японии — фрахт, оформление</li>
+              <li>Таможенной пошлины и утильсбора РФ</li>
+              <li>Нашей фиксированной комиссии</li>
+            </ul>
+            <p>Точный расчёт пошлины зависит от курса валют. Уточним по ситуации перед ставкой.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d1" id="faq-check">
+          <summary>
+            Как проверяется автомобиль до покупки?
+            <span class="q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="ans">
+            <p>Мы проводим детальный перевод аукционного листа. При необходимости заказываем дополнительную инспекцию в порту — каждый дефект фиксируется. Детали проверки конкретного лота уточним по ситуации.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d1" id="faq-docs">
+          <summary>
+            Как передаются ключи и документы?
+            <span class="q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="ans">
+            <p>Документы — ЭПТС, СБКТС — оформляются на ваше имя. Ключи и оригиналы документов передаются лично при выдаче авто или отправляются курьерской службой. Формат передачи уточним по ситуации.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d1" id="faq-travel">
+          <summary>
+            Нужно ли ехать в Японию для покупки?
+            <span class="q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="ans">
+            <p>Нет. Весь процесс организован удалённо — от выбора на аукционе до получения ЭПТС. Мы берём все хлопоты на себя.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal d1" id="faq-payment">
+          <summary>
+            Как происходит оплата?
+            <span class="q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="ans">
+            <p>Оплата разбита на прозрачные этапы: депозит перед торгами, инвойс за авто в Японию, оплата пошлин в РФ и остаток при получении. Точный график платежей уточним по ситуации.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" style="padding-top:0">
+  <div class="container">
+    <div class="contact-panel reveal">
+      <div>
+        <div class="tag" style="color:var(--accent)">Остались вопросы?</div>
+        <h2>Мы готовы обсудить вашу задачу индивидуально</h2>
+        <p class="lead">Напишите или позвоните — расскажем о конкретном лоте, сроках и цене без давления.</p>
+        <div class="contact-links">
+          <a class="c-link" href="tel:+79645410111">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><span class="lbl">Телефон</span><span class="val">8 964 541-01-11</span></div>
+          </a>
+          <a class="c-link" href="https://t.me/SakuraLogist" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>
+            <div><span class="lbl">Telegram</span><span class="val">@SakuraLogist</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <a class="brand" href="index.html" style="font-size:1rem">
+      <span class="brand-mark" style="width:28px;height:28px;border-radius:9px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V3M12 21v-6M9 12H3M21 12h-6"/></svg>
+      </span>
+      SAKURA&nbsp;LOGISTICS
+    </a>
+    <div class="fb">
+      <a href="index.html">Главная</a>
+      <a href="delivery.html">Доставка</a>
+      <a href="catalog.html">Подбор</a>
+      <a href="check.html">Проверка</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="https://t.me/SakuraLogist" target="_blank" rel="noopener">@SakuraLogist</a>
+    </div>
+    <span>© <span id="year">2026</span> SAKURA LOGISTICS</span>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
