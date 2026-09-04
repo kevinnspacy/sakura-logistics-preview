@@ -109,23 +109,44 @@
         .diffused-shadow {
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
         }
+        /* мобильный по умолчанию: flex-колонка, чтобы col-span-* не плодили
+           неявные колонки и 11 гэпов по 32px (давало 352px в 279px контейнере) */
         .grid-asymmetric {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
-        @media (max-width: 767px) {
-            .grid-asymmetric.mobile-single {
-                grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            .grid-asymmetric {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                gap: 32px;
+            }
+        }
+        /* 7 пунктов + логотип + телефон не влезают в строку до 1280px —
+           до этого порога навигация живёт в бургере */
+        @media (max-width: 1279px) {
+            #nav-links.nav-open {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.2rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff8f7;
+                padding: 1.5rem 1.25rem 2rem;
+                border-bottom: 1px solid rgba(229, 189, 190, 0.5);
             }
         }
     </style>
 </head>
 <body class="font-body-default text-body-default antialiased overflow-x-hidden">
 <!-- Shared TopNavBar -->
-<nav class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-margin py-6 max-w-max_width mx-auto left-0 right-0">
+<nav class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-5 md:px-margin py-6 max-w-max_width mx-auto left-0 right-0">
 <a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary" href="index.html">SAKURA LOGIST</a>
-<div class="hidden md:flex gap-8 items-center">
+<div class="hidden xl:flex gap-8 items-center" id="nav-links">
 <a class="text-secondary hover:text-primary transition-colors" href="index.html">Главная</a>
 <a class="text-secondary hover:text-primary transition-colors" href="catalog.html">Подбор</a>
 <a class="text-secondary hover:text-primary transition-colors" href="check.html">Проверка</a>
@@ -134,18 +155,18 @@
 <a class="text-secondary hover:text-primary transition-colors" href="faq.html">FAQ</a>
 <a class="text-secondary hover:text-primary transition-colors" href="contacts.html">Контакты</a>
 </div>
-<a class="hidden md:flex items-center gap-2 bg-primary-container text-on-primary px-6 py-3 rounded-full hover:opacity-90 transition-opacity" href="tel:+79645410111">
+<a class="flex items-center gap-2 bg-primary-container text-on-primary px-4 sm:px-6 py-3 rounded-full hover:opacity-90 transition-opacity" href="tel:+79645410111">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
-<span class="font-medium">8 964 541-01-11</span>
+<span class="font-medium hidden sm:inline">8 964 541-01-11</span>
 </a>
 <!-- Mobile Menu Button -->
-<button class="md:hidden text-on-surface">
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Открыть меню" class="xl:hidden text-on-surface" onclick="const m=document.getElementById('nav-links');this.setAttribute('aria-expanded',m.classList.toggle('nav-open'))" type="button">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </nav>
 <main class="pt-[140px] pb-section_gap">
 <!-- Hero Section -->
-<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<section class="max-w-max_width mx-auto px-5 md:px-margin mb-section_gap">
 <div class="grid-asymmetric md:grid-cols-12 grid-cols-4 items-center">
 <div class="col-span-4 md:col-span-5 md:col-start-1 z-10 flex flex-col gap-6">
 <h1 class="font-display-xl text-display-xl md:text-[72px] text-headline-lg-mobile leading-tight text-on-surface">Как проходит аукцион</h1>
@@ -164,7 +185,7 @@
 </div>
 </section>
 <!-- Process Steps (Asymmetric) -->
-<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<section class="max-w-max_width mx-auto px-5 md:px-margin mb-section_gap">
 <div class="mb-16">
 <h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-headline-lg-mobile text-on-surface">Процесс покупки</h2>
 </div>
@@ -226,7 +247,7 @@
 </div>
 </section>
 <!-- Виды аукционов -->
-<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<section class="max-w-max_width mx-auto px-5 md:px-margin mb-section_gap">
 <div class="grid-asymmetric mobile-single">
 <div class="col-span-12 md:col-span-5 flex flex-col gap-6">
 <h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-headline-lg-mobile text-on-surface">Виды аукционов</h2>
@@ -258,7 +279,7 @@
 </div>
 </section>
 <!-- Аукционный лист (Technical Breakdown) -->
-<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<section class="max-w-max_width mx-auto px-5 md:px-margin mb-section_gap">
 <div class="bg-surface-container-lowest rounded-card whisper-border diffused-shadow p-8 md:p-16">
 <div class="grid-asymmetric">
 <div class="col-span-4 md:col-span-4 flex flex-col justify-center">
@@ -293,7 +314,7 @@
 </div>
 </section>
 <!-- Dark CTA Panel -->
-<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<section class="max-w-max_width mx-auto px-5 md:px-margin mb-section_gap">
 <div class="bg-[#18181B] rounded-card p-12 md:p-24 text-center relative overflow-hidden">
 <!-- Abstract minimal pattern background placeholder -->
 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#E11D48 1px, transparent 1px); background-size: 32px 32px;"></div>
@@ -314,7 +335,7 @@
 </main>
 <!-- Shared Footer -->
 <footer class="bg-surface-container w-full pt-section_gap pb-margin border-t border-outline-variant/20">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin max-w-max_width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-5 md:px-margin max-w-max_width mx-auto">
 <div class="col-span-1 md:col-span-4 flex flex-col gap-4">
 <span class="font-headline-md text-headline-md text-on-surface">SAKURA LOGIST</span>
 <p class="font-technical-data text-technical-data text-on-surface-variant">© 2026 SAKURA LOGISTICS. Авто из Японии под ключ</p>
