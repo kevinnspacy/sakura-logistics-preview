@@ -1,3 +1,3 @@
 :HL["/sakura-logistics-preview/next/_next/static/chunks/3icj89eh7vk4e.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"Gm_vFfy3RE1v25FCKJU7h"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"7stoY89Fm1lGFpD_wJbgz"}

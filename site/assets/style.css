@@ -221,7 +221,8 @@
     .chip-a{right:4%}.chip-b{left:-2%}
     .contact-panel{grid-template-columns:1fr}
   }
-  @media (max-width:900px){
+  /* 4 пункта навигации перестают влезать в строку ниже ~960px — уводим их в бургер раньше */
+  @media (max-width:1000px){
     .nav-links,.nav-cta .btn-ghost{display:none}
     .burger{display:block}
     .nav-links.open{
@@ -230,6 +231,8 @@
       background:var(--canvas);padding:1.5rem clamp(1rem,4vw,4rem) 2rem;
       border-bottom:1px solid var(--border);
     }
+  }
+  @media (max-width:900px){
     .tile.wide,.tile.narrow,.tile.wide-l,.tile.narrow-r{grid-column:span 12}
   }
   @media (max-width:640px){
