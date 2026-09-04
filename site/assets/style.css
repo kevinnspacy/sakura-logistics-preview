@@ -240,6 +240,15 @@
     .why li{padding:1.2rem 1.3rem}
     .hero-chip{display:none}
   }
+  /* ниже 520px номер не влезает рядом с бургером и рвёт кнопку на строки —
+     убираем подпись из вёрстки, оставляя её скринридеру, кнопка сжимается до иконки */
+  @media (max-width:520px){
+    .phone-label{
+      position:absolute;width:1px;height:1px;margin:-1px;padding:0;
+      overflow:hidden;clip-path:inset(50%);white-space:nowrap;
+    }
+    .nav-cta .btn-primary{padding:0.85rem}
+  }
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .reveal{opacity:1;transform:none}
