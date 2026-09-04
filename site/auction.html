@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta name="robots" content="noindex, nofollow"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Как проходит аукцион — SAKURA LOGIST</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "tertiary-container": "#00836c",
+                "surface-variant": "#fbdbdb",
+                "secondary": "#5f5e61",
+                "primary-fixed": "#ffdada",
+                "inverse-primary": "#ffb3b6",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#eefff7",
+                "secondary-fixed": "#e4e1e6",
+                "tertiary": "#006855",
+                "primary": "#b80035",
+                "secondary-fixed-dim": "#c8c5ca",
+                "surface-tint": "#be0037",
+                "on-tertiary-fixed": "#002019",
+                "inverse-surface": "#3f2b2c",
+                "tertiary-fixed-dim": "#74d8bd",
+                "on-surface-variant": "#5c3f40",
+                "surface-bright": "#fff8f7",
+                "on-primary": "#ffffff",
+                "surface-container-low": "#fff0f0",
+                "background": "#fff8f7",
+                "on-surface": "#281718",
+                "on-secondary-fixed-variant": "#47464a",
+                "error": "#ba1a1a",
+                "secondary-container": "#e4e1e6",
+                "on-secondary": "#ffffff",
+                "on-background": "#281718",
+                "surface-container-highest": "#fbdbdb",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed-variant": "#920028",
+                "surface": "#fff8f7",
+                "on-error-container": "#93000a",
+                "on-primary-container": "#fffaf9",
+                "on-secondary-container": "#656467",
+                "primary-container": "#e11d48",
+                "surface-container-high": "#ffe1e1",
+                "primary-fixed-dim": "#ffb3b6",
+                "outline": "#906f70",
+                "on-tertiary-fixed-variant": "#005142",
+                "on-primary-fixed": "#40000c",
+                "outline-variant": "#e5bdbe",
+                "on-error": "#ffffff",
+                "inverse-on-surface": "#ffedec",
+                "surface-container": "#ffe9e9",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed": "#90f5d9",
+                "on-secondary-fixed": "#1b1b1e",
+                "surface-dim": "#f2d3d3"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem",
+                "card": "2.5rem"
+              },
+              "spacing": {
+                "gutter": "32px",
+                "section_gap": "120px",
+                "max_width": "1400px",
+                "margin": "48px"
+              },
+              "fontFamily": {
+                "technical-data": ["JetBrains Mono"],
+                "headline-lg-mobile": ["Outfit"],
+                "display-xl": ["Outfit"],
+                "technical-label": ["JetBrains Mono"],
+                "headline-lg": ["Outfit"],
+                "headline-md": ["Outfit"],
+                "body-default": ["Outfit"]
+              },
+              "fontSize": {
+                "technical-data": ["14px", {"lineHeight": "1.5", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                "technical-label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                "headline-md": ["24px", {"lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                "body-default": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F9FAFB;
+            color: #18181B;
+        }
+        .whisper-border {
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+        .diffused-shadow {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+        }
+        .grid-asymmetric {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+        }
+        @media (max-width: 767px) {
+            .grid-asymmetric.mobile-single {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-default text-body-default antialiased overflow-x-hidden">
+<!-- Shared TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flex justify-between items-center px-margin py-6 max-w-max_width mx-auto left-0 right-0">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary" href="index.html">SAKURA LOGIST</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary hover:text-primary transition-colors" href="index.html">Главная</a>
+<a class="text-secondary hover:text-primary transition-colors" href="catalog.html">Подбор</a>
+<a class="text-secondary hover:text-primary transition-colors" href="check.html">Проверка</a>
+<a class="text-secondary hover:text-primary transition-colors" href="delivery.html">Доставка</a>
+<span class="font-medium border-b-2" style="color: #E11D48; border-color: #E11D48;">Как проходит аукцион</span>
+<a class="text-secondary hover:text-primary transition-colors" href="faq.html">FAQ</a>
+<a class="text-secondary hover:text-primary transition-colors" href="contacts.html">Контакты</a>
+</div>
+<a class="hidden md:flex items-center gap-2 bg-primary-container text-on-primary px-6 py-3 rounded-full hover:opacity-90 transition-opacity" href="tel:+79645410111">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+<span class="font-medium">8 964 541-01-11</span>
+</a>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="pt-[140px] pb-section_gap">
+<!-- Hero Section -->
+<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<div class="grid-asymmetric md:grid-cols-12 grid-cols-4 items-center">
+<div class="col-span-4 md:col-span-5 md:col-start-1 z-10 flex flex-col gap-6">
+<h1 class="font-display-xl text-display-xl md:text-[72px] text-headline-lg-mobile leading-tight text-on-surface">Как проходит аукцион</h1>
+<p class="text-secondary text-lg max-w-md">Прозрачный и честный механизм торгов. Вы контролируете каждый этап покупки автомобиля из Японии.</p>
+<div class="mt-4">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary px-8 py-4 rounded-full hover:opacity-90 transition-opacity w-fit text-lg" href="tel:+79645410111">
+                            Позвонить
+                        </a>
+</div>
+</div>
+<div class="col-span-4 md:col-span-8 md:col-start-5 md:-ml-12 mt-12 md:mt-0 relative">
+<div class="rounded-card overflow-hidden whisper-border diffused-shadow aspect-[1.49] w-full">
+<img alt="Japanese auction sheet and car documents" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X2S2kbKAtnOgx51diggO8YbCsFy88069-NFfkE-g_Lr_u7lAJ56tSqj2_GMNrtQTs67HOcGKxFerB1j5MbgSRn-VLReexzIpEmp7UtngvgKGun8vTIvKGaTLQdvkZlO_MQYwC2Jh0sfkyp4MDhyvIoADDrJMpRGfBLVN0AHgFN1QN4HrFED4UmG94bIqL1kJSU8dj5VRRvGZqnzu3GrdGhJf7WEbWyp0HNPFOo1EWnTBMBDVA27zKkNQSa"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Steps (Asymmetric) -->
+<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-headline-lg-mobile text-on-surface">Процесс покупки</h2>
+</div>
+<div class="flex flex-col gap-8 md:gap-32">
+<!-- Step 01 -->
+<div class="grid-asymmetric items-center">
+<div class="col-span-4 md:col-span-5">
+<div class="bg-surface-container-lowest p-12 rounded-card whisper-border diffused-shadow h-full flex flex-col justify-center">
+<span class="font-technical-data text-technical-data text-primary mb-4 block">01 / ЭТАП</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Подбор лотов</h3>
+<p class="text-secondary">Ищем автомобили строго под ваш бюджет и технические требования. Ежедневный мониторинг аукционов.</p>
+</div>
+</div>
+<div class="col-span-4 md:col-span-6 md:col-start-7 hidden md:block">
+<div class="aspect-video bg-surface-container rounded-card whisper-border overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist digital interface showing a curated list of high-end vehicles. The UI is sleek, with generous whitespace, light mode styling, and precise data tables. The mood is professional and efficient, using a palette of white, light grey, and subtle red accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZyRmllmztyVAo2h52Sae30XVwD2QCf6wcbnciBLBjG65xE-zgfz287ysNVLa2wVLb482gHlEWDriXHfvBjfaiScNn26KlhJdKenrx-4M5tiSzHLJy3bw4yFiH51IQcDI6mSYKfAJpu1QY4Gn1WCnK66KXJKjK4H40Vyjq5ItzsUiZriJFU3v8JwoMNhLOBOd6fTtuQVEXpRf2DIvk5_q3tywF6Zn8uurSCO-GehxeUvYNlDAPr0StB1UfKG0poFqt4CKmxalQee-w"/>
+</div>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="grid-asymmetric items-center">
+<div class="col-span-4 md:col-span-6 hidden md:block">
+<div class="aspect-video bg-surface-container rounded-card whisper-border overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a Japanese car auction inspection sheet, focusing on meticulous hand-written technical marks and stamps. The lighting is soft and analytical, emphasizing precision and transparency. The aesthetic is documentary, clean, with neutral off-white tones and stark black ink." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCml4D5ZNB5cGi5bIF5EG4tYdjTw9l-WXsbFZzc4zX1gqx3VBuMOiPeuAfMLswViIpZqqfPHY5z4lSN_I6L4U8K-5yvc5b8jZXCrtihRMGyOsdlWtG08nYICEFsZUnoFOSpkrl99ttVnB3N-IvkuNqHc-XPWziiLAEQhZcJ_amXZGUN0jsruBrndQY-yQ9wU6mCgyA2oJPGjs3hLwOmD5D114QbXB4jWSMDVngF527o8My_3VO533aPFq6GdPTVI9Oje1Iy5gJU2_os"/>
+</div>
+</div>
+<div class="col-span-4 md:col-span-5 md:col-start-8">
+<div class="bg-surface-container-lowest p-12 rounded-card whisper-border diffused-shadow h-full flex flex-col justify-center">
+<span class="font-technical-data text-technical-data text-primary mb-4 block">02 / ЭТАП</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Анализ листов</h3>
+<p class="text-secondary">Полный перевод аукционного листа. Оценка состояния, выявление скрытых дефектов и проверка истории.</p>
+</div>
+</div>
+</div>
+<!-- Step 03, 04, 05 (Bento-ish grid for the rest) -->
+<div class="grid-asymmetric">
+<div class="col-span-4 md:col-span-4">
+<div class="bg-surface-container-lowest p-10 rounded-card whisper-border diffused-shadow h-full">
+<span class="font-technical-data text-technical-data text-primary mb-4 block">03 / ЭТАП</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Ставка</h3>
+<p class="text-secondary">Торгуемся согласно строгим правилам аукциона, не превышая согласованный бюджет.</p>
+</div>
+</div>
+<div class="col-span-4 md:col-span-4">
+<div class="bg-surface-container-lowest p-10 rounded-card whisper-border diffused-shadow h-full">
+<span class="font-technical-data text-technical-data text-primary mb-4 block">04 / ЭТАП</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Выигрыш и оплата</h3>
+<p class="text-secondary">Прямой инвойс в Японию. Прозрачная схема оплаты без скрытых комиссий.</p>
+</div>
+</div>
+<div class="col-span-4 md:col-span-4">
+<div class="bg-surface-container-lowest p-10 rounded-card whisper-border diffused-shadow h-full">
+<span class="font-technical-data text-technical-data text-primary mb-4 block">05 / ЭТАП</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Экспорт</h3>
+<p class="text-secondary">Организация логистики, фрахт и доставка до Владивостока с полным таможенным оформлением.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Виды аукционов -->
+<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<div class="grid-asymmetric mobile-single">
+<div class="col-span-12 md:col-span-5 flex flex-col gap-6">
+<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-headline-lg-mobile text-on-surface">Виды аукционов</h2>
+<p class="text-secondary text-lg">В Японии существует несколько независимых сетей аукционов. Мы подбираем лоты там, где они доступны и соответствуют вашим требованиям.</p>
+<p class="text-secondary">Аукционы различаются по масштабу, географии, типам лотов (дилерские, корпоративные, частные), формату проведения (физические площадки или онлайн-торги), строгости оценки в аукционном листе и специализации. Детали [уточним по ситуации].</p>
+</div>
+<div class="col-span-12 md:col-span-6 md:col-start-7 flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl whisper-border diffused-shadow">
+<div class="font-technical-data text-technical-data font-medium text-primary mb-2">USS</div>
+<p class="text-secondary">крупнейшая сеть аукционов Японии, самый широкий выбор лотов</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl whisper-border diffused-shadow">
+<div class="font-technical-data text-technical-data font-medium text-primary mb-2">TAA (Toyota Auto Auction)</div>
+<p class="text-secondary">сеть аукционов группы Toyota, много дилерских автомобилей</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl whisper-border diffused-shadow">
+<div class="font-technical-data text-technical-data font-medium text-primary mb-2">JU</div>
+<p class="text-secondary">сеть аукционов ассоциации автодилеров, региональные площадки</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl whisper-border diffused-shadow">
+<div class="font-technical-data text-technical-data font-medium text-primary mb-2">Aucnet</div>
+<p class="text-secondary">онлайн-аукцион с предварительной инспекцией автомобилей</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl whisper-border diffused-shadow">
+<div class="font-technical-data text-technical-data font-medium text-primary mb-2">ARAI, HAA Kobe, CAA</div>
+<p class="text-secondary">региональные площадки со своим составом лотов</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Аукционный лист (Technical Breakdown) -->
+<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<div class="bg-surface-container-lowest rounded-card whisper-border diffused-shadow p-8 md:p-16">
+<div class="grid-asymmetric">
+<div class="col-span-4 md:col-span-4 flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg md:text-headline-lg text-headline-lg-mobile text-on-surface mb-6">Аукционный лист</h2>
+<p class="text-secondary mb-8">Техническая расшифровка оценок и замечаний инспектора.</p>
+</div>
+<div class="col-span-4 md:col-span-7 md:col-start-6">
+<div class="font-technical-data text-technical-data text-on-surface bg-surface p-8 rounded-xl border border-outline-variant/30 flex flex-col gap-4">
+<div class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span class="text-secondary">Оценка кузова:</span>
+<span>[уточним по ситуации]</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span class="text-secondary">Оценка салона:</span>
+<span>[уточним по ситуации]</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span class="text-secondary">Пробег:</span>
+<span>[уточним по ситуации] km</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span class="text-secondary">Год выпуска:</span>
+<span>[уточним по ситуации]</span>
+</div>
+<div class="flex justify-between pt-2">
+<span class="text-secondary">Статус:</span>
+<span class="bg-surface-variant text-primary px-2 py-1 rounded text-xs uppercase tracking-wider">VERIFIED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dark CTA Panel -->
+<section class="max-w-max_width mx-auto px-margin mb-section_gap">
+<div class="bg-[#18181B] rounded-card p-12 md:p-24 text-center relative overflow-hidden">
+<!-- Abstract minimal pattern background placeholder -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#E11D48 1px, transparent 1px); background-size: 32px 32px;"></div>
+<div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+<h2 class="font-display-xl text-headline-lg md:text-display-xl text-white mb-6">Готовы начать поиск?</h2>
+<p class="text-gray-400 mb-10 text-lg">Оставьте заявку, и наш менеджер свяжется с вами для уточнения деталей.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center w-full">
+<a class="inline-flex items-center justify-center bg-primary-container text-white px-8 py-4 rounded-full hover:bg-primary transition-colors text-lg font-medium" href="tel:+79645410111">
+                            Позвонить
+                        </a>
+<a class="inline-flex items-center justify-center border border-white/20 text-white px-8 py-4 rounded-full hover:bg-white/10 transition-colors text-lg font-medium" href="https://t.me/SakuraLogist" rel="noopener noreferrer" target="_blank">
+                            Telegram
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Footer -->
+<footer class="bg-surface-container w-full pt-section_gap pb-margin border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin max-w-max_width mx-auto">
+<div class="col-span-1 md:col-span-4 flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-on-surface">SAKURA LOGIST</span>
+<p class="font-technical-data text-technical-data text-on-surface-variant">© 2026 SAKURA LOGISTICS. Авто из Японии под ключ</p>
+</div>
+<div class="col-span-1 md:col-span-8 flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-start font-technical-data text-technical-data">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20" href="index.html">Главная</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20" href="catalog.html">Подбор</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20" href="check.html">Проверка</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20" href="delivery.html">Доставка</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20" href="faq.html">FAQ</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20" href="contacts.html">Контакты</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20" href="https://t.me/SakuraLogist" rel="noopener noreferrer" target="_blank">Telegram</a>
+</div>
+</div>
+</footer>
+</body></html>
